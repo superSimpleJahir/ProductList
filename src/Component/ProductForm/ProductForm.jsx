@@ -15,7 +15,7 @@ const ProductForm = ({formHandlerSubmit}) => {
           <label htmlFor="ProductType">
             Product type: <br />
             <select name="productType" id="ProductType">
-              <option value="Choose">Choose Type</option>
+              <option value="">Choose Type</option>
               <option value="Panjabi">Panjabi</option>
               <option value="Pajama">Pajama</option>
             </select>
@@ -26,7 +26,7 @@ const ProductForm = ({formHandlerSubmit}) => {
           <label htmlFor="chooseColor">
             Choose Color: <br />
             <select name="chooseColor" id="chooseColor">
-              <option>Choose Color</option>
+              <option value="">Choose Color</option>
               <option value="red">Red</option>
               <option value="blue">Blue</option>
               <option value="green">Green</option>
@@ -38,7 +38,7 @@ const ProductForm = ({formHandlerSubmit}) => {
           <label htmlFor="selectSize">
             Select Size: <br />
             <select name="selectSize" id="selectSize">
-              <option>Select Size</option>
+              <option value="">Select Size</option>
               <option value="s">S</option>
               <option value="m">M</option>
               <option value="l">L</option>

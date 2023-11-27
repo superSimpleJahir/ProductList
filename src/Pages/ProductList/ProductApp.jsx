@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./ProductApp.css";
 import ProductForm from "../../Component/ProductForm/ProductForm";
 import ProductList from "../../Component/ProductList/ProductList";
@@ -21,20 +21,36 @@ const ProductApp = () => {
       if (oneElement.tagName !== "BUTTON") {
         inputValue[oneElement.name] = oneElement.value;
         oneElement.value = "";
-        setInputs([...inputs, inputValue]);
       }
     });
+    
+    if (
+      inputValue["productName"].length > 0 &&
+      inputValue["productType"].length > 0 &&
+      inputValue["chooseColor"].length > 0 &&
+      inputValue["selectSize"].length > 0 &&
+      inputValue["selectQuantity"].length > 0 &&
+      inputValue["description"].length > 0 &&
+      inputValue["price"].length > 0
+    ) {
+      setInputs([...inputs, inputValue]);
+    } else alert("Age nam lekh");
   };
-  
+
   // Product delete handler
   const handleDelete = (idx) => {
     const newFillteredItems = inputs.filter((item, index) => index !== idx);
     setInputs(newFillteredItems);
   };
-  // jodi forme nia kaj korte  hoi tahole useEffect babohar korte hobe karon akhane aktu somai nia kaj kore
-  useEffect(() => {
-    // console.log(inputs);
-  }, [inputs]);
+
+  // All Product delete handler
+  const handleDeleteAll = () => {
+    setInputs([]);
+  };
+
+  // useEffect(() => {
+
+  // }, [inputs]);
 
   return (
     <section className="ProductList">
@@ -64,14 +80,17 @@ const ProductApp = () => {
               />
             ))}
           </tbody>
-
-          <tfoot>
-            <tr>
-              <td>
-                <button>Remove all</button>
-              </td>
-            </tr>
-          </tfoot>
+          {inputs.length > 0 && (
+            <tfoot>
+              <tr>
+                <td colSpan="8">
+                  <button onClick={handleDeleteAll} className="listBtn">
+                    Remove all
+                  </button>
+                </td>
+              </tr>
+            </tfoot>
+          )}
         </table>
       </div>
     </section>
@@ -79,7 +98,3 @@ const ProductApp = () => {
 };
 
 export default ProductApp;
-
-{
-  /* <i className="fa-solid fa-trash"></i> */
-}

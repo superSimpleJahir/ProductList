@@ -12,7 +12,7 @@ const ProductList = ({product, handleDelete, id}) => {
       <td>{selectQuantity}</td>
       <td>{price}</td>
       <td>{description}</td>
-      <td style={{cursor: "pointer"}} onClick={()=> handleDelete(id)}>Delete</td>
+      <td style={{cursor: "pointer",color:'red'}} onClick={()=> handleDelete(id)}>Delete</td>
     </tr>
   );
 };

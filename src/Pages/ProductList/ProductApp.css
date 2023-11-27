@@ -63,14 +63,26 @@ label {
   background-color: #f2f2f2;
 }
 
-#customers tr:hover {
-  background-color: #ddd;
-}
-
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+tfoot {
+  background-color: crimson;
+  cursor: pointer;
+}
+tfoot:hover {
+opacity: .8;
+}
+
+.listBtn {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
 }
