@@ -1,10 +1,11 @@
-import ProductsList from "./Pages/ProductList/ProductsList";
+
+import ProductApp from './Pages/ProductList/ProductApp';
 import './assets/App.css'
 
 function App() {
   return (
     <main className="container">
-      <ProductsList/>
+      <ProductApp/>
     </main>
   );
 }
