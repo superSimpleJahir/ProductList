@@ -23,7 +23,7 @@ const ProductApp = () => {
         oneElement.value = "";
       }
     });
-    
+
     if (
       inputValue["productName"].length > 0 &&
       inputValue["productType"].length > 0 &&
@@ -57,41 +57,43 @@ const ProductApp = () => {
       <ProductForm formHandlerSubmit={formHandlerSubmit} />
 
       <div>
-        <table id="customers">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Color</th>
-              <th>Size</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Description</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {inputs.map((productData, index) => (
-              <ProductList
-                key={index}
-                product={productData}
-                id={index}
-                handleDelete={handleDelete}
-              />
-            ))}
-          </tbody>
-          {inputs.length > 0 && (
-            <tfoot>
+        {inputs.length > 0 && (
+          <table id="customers">
+            <thead>
               <tr>
-                <td colSpan="8">
-                  <button onClick={handleDeleteAll} className="listBtn">
-                    Remove all
-                  </button>
-                </td>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Color</th>
+                <th>Size</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Delete</th>
               </tr>
-            </tfoot>
-          )}
-        </table>
+            </thead>
+            <tbody>
+              {inputs.map((productData, index) => (
+                <ProductList
+                  key={index}
+                  product={productData}
+                  id={index}
+                  handleDelete={handleDelete}
+                />
+              ))}
+            </tbody>
+            {inputs.length > 0 && (
+              <tfoot>
+                <tr>
+                  <td colSpan="8">
+                    <button onClick={handleDeleteAll} className="listBtn">
+                      Remove all
+                    </button>
+                  </td>
+                </tr>
+              </tfoot>
+            )}
+          </table>
+        )}
       </div>
     </section>
   );
