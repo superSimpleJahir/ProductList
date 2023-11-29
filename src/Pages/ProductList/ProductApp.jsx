@@ -34,7 +34,7 @@ const ProductApp = () => {
       inputValue["price"].length > 0
     ) {
       setInputs([...inputs, inputValue]);
-    } else alert("Age nam lekh");
+    } else alert("From puron korun..");
   };
 
   // Product delete handler
